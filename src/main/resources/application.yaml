@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: Expenses API
+  datasource:
+    driverClassName: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://${MYSQL_HOST:localhost}:${MYSQL_PORT:3306}/expenses_db?allowPublicKeyRetrieval=true&useSSL=false&createDatabaseIfNotExist=true&server
+    password: ${DB_PASSWORD}
+    username: ${DB_USERNAME}
+  jpa:
+    database-platform: org.hibernate.dialect.MySQLDialect
+    defer-datasource-initialization: true
+    properties:
+      hibernate:
+        format_sql: true
+    hibernate:
+      ddl-auto: update
+    sql:
+      init:
+        mode: never
+server:
+  port: 8081
