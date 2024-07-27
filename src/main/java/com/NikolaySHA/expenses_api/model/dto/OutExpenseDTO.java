@@ -12,4 +12,5 @@ public class OutExpenseDTO {
     private long id;
     private String name;
     private double price;
+    private Long appointmentId;
 }
